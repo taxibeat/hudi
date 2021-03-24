@@ -10,7 +10,6 @@ USER root
 COPY --from=builder hudi-common/target/classes/org/apache/hudi/common/model/DebeziumAvroPayload.class /opt/spark/jars/
 COPY --from=builder packaging/hudi-spark-bundle/target/hudi-spark-bundle_2.12-0.7.0.jar /opt/spark/jars/
 COPY --from=builder packaging/hudi-utilities-bundle/target/hudi-utilities-bundle_2.12-0.7.0.jar /opt/spark/jars/
-COPY --from=builder packaging/hudi-hadoop-mr-bundle/target/hudi-hadoop-mr-bundle-0.7.0.jar /opt/spark/jars/
 
 RUN apt-get update && apt-get install wget -y
 
